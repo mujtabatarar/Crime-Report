@@ -25,6 +25,12 @@ export class crimeController {
     return this.crimesService.findAllLatLng();
   }
 
+  @Get('get/all')
+  getAllCrimes() {
+    this.logger.log(`HTTP :: getAllCrimes :: crime/get/all`);
+    return this.crimesService.findAll();
+  }
+
   @Get('type/count')
   getCrimeTypeCounts() {
     this.logger.log(`HTTP :: getCrimeTypeCounts :: crime/type/count`);

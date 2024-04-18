@@ -45,6 +45,19 @@ export class crimeService {
     }
   }
 
+  async findAll(): Promise<ResponseHandlerInterface> {
+    try {
+      const crimes = await this.crimeModel.find().exec();
+      return ResponseData.success(crimes);
+    } catch (err) {
+      this.logger.error(`findAll -> error: ${JSON.stringify(err.message)}`);
+      return ResponseData.error(
+        HttpStatus.INTERNAL_SERVER_ERROR,
+        errorMessage.SOMETHING_WENT_WRONG,
+      );
+    }
+  }
+
   async getCrimeTypeCounts(): Promise<ResponseHandlerInterface> {
     try {
       const crimeTypeCounts = await this.crimeModel.aggregate([

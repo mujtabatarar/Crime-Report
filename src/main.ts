@@ -8,7 +8,7 @@ require('dotenv').config();
 const logger = new Logger();
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { cors: true });
 
   app.startAllMicroservicesAsync();
   await app.listen(appConfig().TCPPort);

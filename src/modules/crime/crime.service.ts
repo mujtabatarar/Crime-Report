@@ -131,7 +131,6 @@ export class crimeService {
   async getParticularUserEngagementOverTime(
     userId: any,
   ): Promise<ResponseHandlerInterface> {
-    console.log(userId);
     try {
       const engagementData = await this.crimeModel.aggregate([
         {

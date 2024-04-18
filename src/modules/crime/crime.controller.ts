@@ -40,7 +40,6 @@ export class crimeController {
   @Get('particular/user/engagement/:id')
   getParticularUserEngagementOverTime(@Param() id: string) {
     this.logger.log(`HTTP :: getUserEngagementOverTime :: 'user/engagement'`);
-    console.log('-------------------------gggggggggggg---------------');
     return this.crimesService.getParticularUserEngagementOverTime(id);
   }
 }

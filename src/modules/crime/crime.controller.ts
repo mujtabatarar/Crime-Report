@@ -11,7 +11,7 @@ export class crimeController {
   constructor(private readonly crimesService: crimeService) {}
 
   @Post('report')
-  report(@Body() body: CreateCrimeDto, @Req() req: Request) {
+  report(@Body() body: CreateCrimeDto, @Req() req: any) {
     this.logger.log(
       `HTTP :: report a crime :: crime/report :: recv -> ${body}`,
     );

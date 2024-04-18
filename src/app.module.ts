@@ -21,7 +21,8 @@ console.log(
 @Module({
   imports: [
     MongooseModule.forRoot(
-      `mongodb://${process.env.DB_HOST}/${process.env.DB_NAME}`,
+      // `mongodb://${process.env.DB_HOST}/${process.env.DB_NAME}`,
+      process.env.DB_HOST,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,

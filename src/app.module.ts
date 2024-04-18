@@ -34,7 +34,7 @@ console.log(
     }),
     LoggerModule.forRoot({
       pinoHttp: {
-        name: 'udemy-service',
+        name: 'crime-report-project',
         level: 'debug',
         formatters: {
           level: (label) => {
